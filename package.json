@@ -1,0 +1,37 @@
+{
+  "name": "graph-db-benchmarking-suite",
+  "version": "1.0.0",
+  "description": "Reproducible Graph Database Cloud Benchmarking Suite for CognoDB Cloud, Neo4j, Memgraph, FalkorDB, and ArangoDB",
+  "main": "bin/run-benchmark.js",
+  "type": "module",
+  "scripts": {
+    "start": "node bin/run-benchmark.js",
+    "benchmark": "node bin/run-benchmark.js",
+    "generate-data": "node dataset/generate-dataset.js",
+    "download-snap": "node dataset/download-snap.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "cognodb",
+    "neo4j",
+    "memgraph",
+    "falkordb",
+    "arangodb",
+    "graph-database",
+    "benchmark",
+    "cypher",
+    "aql",
+    "wexa-ai"
+  ],
+  "author": "Wexa AI Benchmark Evangelist",
+  "license": "MIT",
+  "dependencies": {
+    "arangojs": "^8.8.0",
+    "chalk": "^5.3.0",
+    "cli-progress": "^3.12.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "neo4j-driver": "^5.23.0",
+    "redis": "^4.7.0"
+  }
+}

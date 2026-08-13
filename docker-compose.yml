@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # Neo4j Container (Resource capped to match CognoDB c0 tier: 0.5 vCPU, 256MB RAM)
+  neo4j:
+    image: neo4j:5.18.0-community
+    container_name: benchmark_neo4j
+    ports:
+      - "7687:7687"
+      - "7474:7474"
+    environment:
+      - NEO4J_AUTH=neo4j/password123
+      - NEO4J_dbms_memory_heap_initial__size=128m
+      - NEO4J_dbms_memory_heap_max__size=128m
+      - NEO4J_dbms_memory_pagecache_size=64m
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+
+  # Memgraph Container (Resource capped to 0.5 vCPU, 256MB RAM)
+  memgraph:
+    image: memgraph/memgraph:2.15.0
+    container_name: benchmark_memgraph
+    ports:
+      - "7688:7687"
+    command: ["--memory-limit=256"]
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+
+  # FalkorDB / RedisGraph Container (Resource capped to 0.5 vCPU, 256MB RAM)
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: benchmark_falkordb
+    ports:
+      - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M
+
+  # ArangoDB Container (Resource capped to 0.5 vCPU, 256MB RAM)
+  arangodb:
+    image: arangodb/arangodb:3.11.8
+    container_name: benchmark_arangodb
+    ports:
+      - "8529:8529"
+    environment:
+      - ARANGO_ROOT_PASSWORD=password123
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 256M

@@ -1,0 +1,57 @@
+{
+  "cognodb": {
+    "name": "CognoDB Cloud",
+    "tier": "c0 Free",
+    "vcpu": "0.5 vCPU (Burstable)",
+    "ram": "256 MB",
+    "storage": "1 GB",
+    "queryLanguage": "Cypher",
+    "protocol": "Bolt+s",
+    "architecture": "Native Graph Engine with RAM-optimized vector index & direct node pointer traversals",
+    "cloudRegion": "aws-us-east-1"
+  },
+  "neo4j": {
+    "name": "Neo4j Cloud / Aura",
+    "tier": "Aura Free / Capped",
+    "vcpu": "0.5 vCPU (Equivalent)",
+    "ram": "256 MB",
+    "storage": "1 GB",
+    "queryLanguage": "Cypher",
+    "protocol": "Bolt",
+    "architecture": "Java JVM Native Graph with On-Disk PageCache and Object Pointer Adjacency",
+    "cloudRegion": "aws-us-east-1"
+  },
+  "memgraph": {
+    "name": "Memgraph Cloud",
+    "tier": "Cloud Free / Capped",
+    "vcpu": "0.5 vCPU (Equivalent)",
+    "ram": "256 MB",
+    "storage": "1 GB",
+    "queryLanguage": "Cypher",
+    "protocol": "Bolt",
+    "architecture": "In-Memory C++ Native Graph Database with Skip-List Indexes & Lock-free Cypher Runner",
+    "cloudRegion": "aws-us-east-1"
+  },
+  "falkordb": {
+    "name": "FalkorDB / RedisGraph",
+    "tier": "Free / Capped",
+    "vcpu": "0.5 vCPU (Equivalent)",
+    "ram": "256 MB",
+    "storage": "1 GB",
+    "queryLanguage": "Cypher",
+    "protocol": "Redis RESP / Bolt",
+    "architecture": "Sparse Matrix Graph Engine leveraging GraphBLAS linear algebra routines",
+    "cloudRegion": "aws-us-east-1"
+  },
+  "arangodb": {
+    "name": "ArangoDB Cloud",
+    "tier": "Oasis Free / Capped",
+    "vcpu": "0.5 vCPU (Equivalent)",
+    "ram": "256 MB",
+    "storage": "1 GB",
+    "queryLanguage": "AQL",
+    "protocol": "HTTP / VelocyStream",
+    "architecture": "Multi-Model Document Graph Engine with RocksDB storage engine & primary key edge indexing",
+    "cloudRegion": "aws-us-east-1"
+  }
+}
